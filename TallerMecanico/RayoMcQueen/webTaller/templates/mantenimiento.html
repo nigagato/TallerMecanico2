@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Mecánico Rayo McQueen</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/noticia.css">
+</head>
+
+<body>
+    <header>
+        <span>Agenda tu atencion con nosotros</span>
+        <a href="agendar.html" class="btn btn-light btn-sm"  id="btnAgendar">Agendar</a>
+        <a href="#" class="btn btn-light btn-lg ms-auto"  id="btnVerLogin">Crear cuenta/Ingresa</a>
+    </header>
+<main>
+    <nav class="navbar navbar-expand-xl navbar-light" style="background-color: yellowgreen">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/elrayo.png" alt="logo" id="logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="galeria.html">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="registrarse.html">Registro</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="noticia">
+        <h3 style="text-align: center;">Cambio de pastillas de freno en el Taller Rayo McQueen.</h3>
+        <div class="contenedor">
+            <article>
+                <img src="img/scanner.jpg" alt="">
+                <h4>Realizado por: Nombre Apellido</h4>
+            </article>
+        </div>
+    </section>
+    <div class="container" style="text-align: justify; font-size: large;">
+        <div class="row">
+            <div class="col-md-8 col-sm-4">
+                El trabajo ha sido realizado por el mecanico Nombre Apellido. para realizar esta mantención fueron
+                necesarios los siguientes materiales: Scanner automotriz y cables de extensión OBD II.
+            </div>
+            <div class="col-md-4 col-sm-8">
+                En primer lugar hemos conectado el scanner utilizando los cables con extension OBD II con la conexion de enlace del vehiculo
+                ubicada entre el pedal de acelerador y el panel de la izquierda, luego hemos encendido el auto y chequeamos que no se detectara ninguna anomalia,
+                finalmente apagado el scanner y el vehiculo para abrir el capó y examinar un posible error no detectado, resultó estar todo en orden.</div>
+        </div>
+    </div>
+</main>
+<script src="js/bootstrap.bundle.min.js"></script>
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+            <img src="img/elrayo.png" alt="">
+            <script src="js/registro.js"></script>
+            <script src="js/DaoRegistro.js"></script>
+            <form action="">
+                <label>
+                    <span>Email:</span>
+                    <input type="text" name="txtEmail" id="txtEmail" placeholder="Email..." required>
+                </label>
+                <label>
+                    <span>Contraseña:</span>
+                    <input type="password" name="pwdPass" id="pwdPass" placeholder="Contraseña..." required>
+                </label>
+                <input type="button" value="Iniciar Sesion"  onclick= "login()" id="btnLogin">
+                <a href="registrarse.html">Crear una cuenta...</a>
+            </form>
+           
+        </div>
+    </div>
+    <script src="js/mostrarLogin.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+<footer>
+    <h4 &copy;2023 >Taller Mecanico Rayo McQueen #Los Comendadores 1165 San Geronimo.</h4>
+</footer>
+
+</html>

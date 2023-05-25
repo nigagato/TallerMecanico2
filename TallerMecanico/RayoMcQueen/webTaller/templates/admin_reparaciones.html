@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/admin_reparaciones.css' %}" />
+{% endblock css %}
+
+{% block contenido %}
+
+        {{mensaje}}
+        <section id="admin_reparaciones">
+            <span style="color: black">Administración de reparaciones</span>
+            <div class="contacto-input">
+                <form action="{% url 'ADM_REP' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <h5>Nombre</h5>
+                    <input class="col-p" placeholder="Nombre...." type="text" name="txtNombre" id="txtDescripcion" required />
+                    <br />
+                    <br />
+                    <h5>Descripción</h5>
+                    <textarea class="col-g" placeholder="Ingrese descripción" name="txtDescripcion" id="txtDescripcion"></textarea>
+                    <br />
+                    <br />
+                    <input type="file" class= "col-g" name="txtImg" id="txtImg">
+                    <br />
+                    <select name="cboCategoria" class="col-g" id="cboCategoria">
+                        {% for item in categorias %}
+                            <option value="{{item.nombre}}">{{item.nombre}}</option>
+                        {% endfor %}
+                    </select>
+                    <button onclick="enviarMensaje()" id="btnMensaje">Guardar Reparación</button>
+                </form>
+            </div>
+        </section>
+    </main>
+{% endblock contenido %}
+
+{% block js %}
+    <script>
+        function enviarMensaje() {
+            alert("Reparación guardada correctamente.");
+        }
+    </script>
+{% endblock js %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/contacto.css' %}" />
+{% endblock css %}
+
+{% block contenido %}
+    <section id="contactanos">
+        <span style="color: black">CONTÁCTANOS</span>
+        <div class="contacto-input">
+            <form id="contactoForm">
+                <h5>Nombre completo</h5>
+                <input class="col-p" placeholder="Nombre...." type="text" name="txtNombre" id="txtNombre" required />
+                <h5>Correo electrónico</h5>
+                <input class="col-p" placeholder="Email...." type="email" name="txtEmailMensaje" id="txtEmailMensaje" required />
+                <h5>Número de teléfono</h5>
+                <input class="col-p" placeholder="+569...." type="number" name="txtTelefono" id="txtTelefono" required />
+                <h5>Mensaje</h5>
+                <textarea class="col-g" name="txtMensaje" id="txtMensaje" cols="30" rows="10" placeholder=
+                "Déjanos tu consulta y/o problema. Reparar su vehículo, facilitarle el repuesto que necesite,cambio de aceite, cualquier tipo de servicio, nuestra principal preocupación es la solución al problema del cliente."></textarea>
+                <button type="submit" onclick="validarContacto(event)" id="btnMensaje">Enviar mensaje.</button>
+            </form>
+        </div>
+    </section>
+{% endblock contenido %}
+
+{% block js %}
+<script src="{% static 'js/contacto.js' %}"></script>
+{% endblock js %}

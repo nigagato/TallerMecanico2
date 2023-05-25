@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/galeria.css' %}" />
+{% endblock css %}
+
+{% block contenido %}
+        <section id="blog">
+            <h3>Reparaciones en nuestro taller.</h3>
+            <form action="{% url 'GALE' %}" method="post">
+                {% csrf_token %}
+                Cantidad actual de reparaciones: {{cantidad}}
+                <br>
+                Buscar reparación:
+                <input type="text" name="txtBuscar" id="txtBuscar">
+                <input type="submit" value="Buscar">
+
+            </form>
+
+            <form action="{% url 'FILTRO_DESC' %}" method="post">
+                {% csrf_token %}
+                Buscar reparación por descripción:
+                <input type="text" name="txtDesc" id="txtDesc">
+                <input type="submit" value="Buscar">
+            </form>
+
+            <form action="{% url 'FILTRO_CATE' %}" method="post">
+                {% csrf_token %}
+                Categoria del vehiculo:
+
+                <select name="cboCategoria">
+                    <option>Todos</option>
+                    {% for cate in categorias %}
+                    <option>{{cate.nombre}}</option>
+                    {% endfor %}
+                    
+                    
+                </select>
+                <input type="submit" value="Buscar">
+            </form>
+
+            <div class="contenedor">
+            {% for item in reparaciones %}
+                <article>
+                    <img src="{{item.foto.url}}" alt="" />
+                    <h4>{{item.nombre}}</h4>
+                    <a href="{% url 'FICHA' item.nombre %}">Ver Ficha</a>
+                </article>
+            {% endfor %}
+            </div>
+        </section>
+    </main>
+{% endblock contenido %}
